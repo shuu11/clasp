@@ -1,0 +1,20 @@
+{
+	"name": "clasp",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"create": "npx clasp create sample",
+		"pull": "npx clasp pull",
+		"push": "npx clasp push",
+		"clone": "npx clasp clone"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@google/clasp": "^2.4.2",
+		"@types/google-apps-script": "^1.0.58",
+		"@types/node": "^18.15.3"
+	}
+}
