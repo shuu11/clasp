@@ -10,5 +10,5 @@ const sheet = new ActiveSheet()
 const sheetName = sheet.getSheetName()
 
 const main = () => {
-	console.log(sheetName)
+	sendGoogleChat()
 }
