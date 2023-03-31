@@ -2,7 +2,7 @@
 	"name": "clasp",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "test.js",
 	"scripts": {
 		"create": "npx clasp create sample",
 		"pull": "npx clasp pull",
@@ -15,6 +15,7 @@
 	"devDependencies": {
 		"@google/clasp": "^2.4.2",
 		"@types/google-apps-script": "^1.0.58",
-		"@types/node": "^18.15.3"
+		"@types/node": "^18.15.3",
+		"prettier": "^2.8.7"
 	}
 }
