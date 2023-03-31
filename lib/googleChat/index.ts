@@ -1,22 +1,26 @@
 const { googleChat } = env
 
+const config = (text: string) => ({
+	method: 'post' as GoogleAppsScript.URL_Fetch.HttpMethod,
+	headers: {
+		'Content-Type': 'application/json; charset=UTF-8',
+	},
+	payload: JSON.stringify({ text }),
+})
+
 type Prop = {
 	text: string
 }
 
-const sendGoogleChat = (prop: Prop = { text: 'Hello World!' }) => {
+/**
+ * google chatにメッセージを送信する
+ * @param {{text}} string メッセージテキスト
+ */
+function sendGoogleChat(prop: Prop = { text: 'Hello World!' }) {
 	const { text } = prop
 
-	const config = {
-		method: 'post' as GoogleAppsScript.URL_Fetch.HttpMethod,
-		headers: {
-			'Content-Type': 'application/json; charset=UTF-8',
-		},
-		payload: JSON.stringify({ text }),
-	}
-
 	if (googleChat) {
-		const res = UrlFetchApp.fetch(googleChat, config)
+		const res = UrlFetchApp.fetch(googleChat, config(text))
 
 		console.log('done')
 	} else {
