@@ -1,0 +1,3 @@
+function screenUpdate(){
+	SpreadsheetApp.flush()
+}

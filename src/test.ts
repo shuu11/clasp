@@ -6,9 +6,9 @@
 /**
  * my app
  */
-const sheet = new ActiveSheet()
-const sheetName = sheet.getSheetName()
+const s = new ActiveSheet()
 
 const main = () => {
-	sendGoogleChat()
+	s.setValue(1, 1, 'test')
+
 }

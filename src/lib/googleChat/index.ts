@@ -1,4 +1,6 @@
-const { googleChat } = env
+const env = {
+	googleChat: PropertiesService.getScriptProperties().getProperty('GOOGLE_CHAT_WEBHOOK'),
+}
 
 const config = (text: string) => ({
 	method: 'post' as GoogleAppsScript.URL_Fetch.HttpMethod,
@@ -19,8 +21,8 @@ type Prop = {
 function sendGoogleChat(prop: Prop = { text: 'Hello World!' }) {
 	const { text } = prop
 
-	if (googleChat) {
-		const res = UrlFetchApp.fetch(googleChat, config(text))
+	if (env.googleChat) {
+		const res = UrlFetchApp.fetch(env.googleChat, config(text))
 
 		console.log('done')
 	} else {
