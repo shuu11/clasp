@@ -9,6 +9,13 @@
 const s = new ActiveSheet()
 
 const main = () => {
-	s.setValue(1, 1, 'test')
+	const val1 = s.getValue(1, 2)
+
+	console.log(val1);
+
+	const val2 = s.getValue("A3")
+
+	console.log(val2);
+
 
 }
