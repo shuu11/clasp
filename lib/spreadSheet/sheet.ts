@@ -2,14 +2,14 @@
  * シート名を指定して操作
  */
 class Sheet {
-	#ss: TypeApp = SpreadsheetApp.getActiveSpreadsheet()
+	ss: TypeApp = SpreadsheetApp.getActiveSpreadsheet()
 
 	constructor(public name: string) {
 		this.name = name
 	}
 
 	getSheet(): TypeSheet | null {
-		return this.#ss.getSheetByName(this.name)
+		return this.ss.getSheetByName(this.name)
 	}
 
 	getValue(row: number, column: number): unknown {

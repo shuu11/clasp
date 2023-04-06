@@ -2,14 +2,14 @@
  * アクティブシートの操作
  */
 class ActiveSheet {
-	#ss: TypeApp = SpreadsheetApp.getActiveSpreadsheet()
+	ss: TypeApp = SpreadsheetApp.getActiveSpreadsheet()
 
 	getSheet(): TypeSheet {
-		return this.#ss.getActiveSheet()
+		return this.ss.getActiveSheet()
 	}
 
 	getSheetName(): string {
-		return this.#ss.getActiveSheet().getName()
+		return this.ss.getActiveSheet().getName()
 	}
 
 	getValue(row: number, column: number): unknown {
