@@ -12,14 +12,14 @@ type activeSheet = {
 }
 
 class ActiveSheet implements activeSheet {
-	#ss: TypeApp = SpreadsheetApp.getActiveSpreadsheet()
+	ss: TypeApp = SpreadsheetApp.getActiveSpreadsheet()
 
 	getSheet(): TypeSheet {
-		return this.#ss.getActiveSheet()
+		return this.ss.getActiveSheet()
 	}
 
 	getSheetName(): string {
-		return this.#ss.getActiveSheet().getName()
+		return this.ss.getActiveSheet().getName()
 	}
 
 	getValue(...args: any): any {
@@ -27,13 +27,13 @@ class ActiveSheet implements activeSheet {
 			case 2:
 				let row = args[0]
 				let column = args[1]
-				return this.#ss.getActiveSheet().getRange(row, column).getValue()
+				return this.ss.getActiveSheet().getRange(row, column).getValue()
 				break
 
 			case 1:
 				if (typeof args[0] === 'string') {
 					let a1Notation = args[0]
-					return this.#ss.getActiveSheet().getRange(a1Notation).getValue()
+					return this.ss.getActiveSheet().getRange(a1Notation).getValue()
 				} else {
 					throw new Error('Invalid arguments.')
 				}
@@ -46,18 +46,18 @@ class ActiveSheet implements activeSheet {
 	}
 
 	getValues(row: number, column: number): any[][] {
-		return this.#ss.getActiveSheet().getRange(row, column)?.getValues()
+		return this.ss.getActiveSheet().getRange(row, column)?.getValues()
 	}
 
 	getLastRow(): number {
-		return this.#ss.getActiveSheet().getLastRow()
+		return this.ss.getActiveSheet().getLastRow()
 	}
 
 	getLastColumn(): number {
-		return this.#ss.getActiveSheet().getLastColumn()
+		return this.ss.getActiveSheet().getLastColumn()
 	}
 
 	setValue(row: number, column: number, value: any): void {
-		this.#ss.getActiveSheet().getRange(row, column).setValue(value)
+		this.ss.getActiveSheet().getRange(row, column).setValue(value)
 	}
 }
