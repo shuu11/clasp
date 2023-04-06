@@ -12,8 +12,12 @@ class Sheet {
 		return this.ss.getSheetByName(this.name)
 	}
 
-	getValue(row: number, column: number): unknown {
+	getValue(row: number, column: number): any {
 		return this.getSheet()?.getRange(row, column)?.getValue()
+	}
+
+	getValues(row: number, column: number): any[][] | undefined {
+		return this.getSheet()?.getRange(row, column)?.getValues()
 	}
 
 	getLastRow(): number | undefined {

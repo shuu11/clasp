@@ -6,9 +6,16 @@
 /**
  * my app
  */
-const sheet = new ActiveSheet()
-const sheetName = sheet.getSheetName()
+const s = new ActiveSheet()
 
 const main = () => {
-	sendGoogleChat()
+	const val1 = s.getValue(1, 2)
+
+	console.log(val1);
+
+	const val2 = s.getValue("A3")
+
+	console.log(val2);
+
+
 }
